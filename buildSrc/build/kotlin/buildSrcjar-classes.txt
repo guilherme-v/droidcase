@@ -1,1 +1,1 @@
-/Users/guilherme/Developer/Android/DroidCase/buildSrc/build/classes/kotlin/main/Domain.class:/Users/guilherme/Developer/Android/DroidCase/buildSrc/build/classes/kotlin/main/Versions.class
+/Users/guilherme/Developer/Android/DroidCase/buildSrc/build/classes/kotlin/main/Data.class:/Users/guilherme/Developer/Android/DroidCase/buildSrc/build/classes/kotlin/main/Domain.class:/Users/guilherme/Developer/Android/DroidCase/buildSrc/build/classes/kotlin/main/Versions.class
