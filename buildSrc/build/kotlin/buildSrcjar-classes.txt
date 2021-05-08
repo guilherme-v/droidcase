@@ -1,0 +1,1 @@
+/Users/guilherme/Developer/Android/DroidCase/buildSrc/build/classes/kotlin/main/Versions.class
