@@ -1,2 +1,3 @@
 rootProject.name = "DroidCase"
 include ':app'
+include ':domain'
