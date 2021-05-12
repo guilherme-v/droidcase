@@ -1,6 +1,10 @@
 plugins {
     id("com.android.application")
+//    id("org.jetbrains.kotlin.android")
+//
+//    id("kotlin-android") version "1.4.30"
     id("kotlin-android")
+//    id("org.jetbrains.kotlin.android") version "1.4.30"
     id("kotlin-kapt")
 }
 
@@ -10,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.presentation"
-        minSdk = 2
+        minSdk = 21
         targetSdk = 30
         versionCode = 1
         versionName = "1.0"
@@ -31,19 +35,25 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
         useIR = true
+
+        // Error: This version (1.0.0-alpha13) of the Compose Compiler requires Kotlin version 1.4.30 but you appear to be using Kotlin version 1.5.0 which is not known to be compatible.  Please fix your configuration (or `suppressKotlinVersionCompatibilityCheck` but don't say I didn't warn you!).
+        // Fix: https://stackoverflow.com/questions/65545018/where-can-i-put-the-suppresskotlinversioncompatibilitycheck-flag
+        // freeCompilerArgs = listOf(
+        //    "-P",
+        //    "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
+        // )
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.android_compose_version
-        kotlinCompilerExtensionVersion = "1.4.32"
     }
 }
 
