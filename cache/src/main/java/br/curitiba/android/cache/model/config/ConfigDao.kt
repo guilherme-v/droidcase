@@ -8,7 +8,7 @@ import androidx.room.Query
 @Dao
 interface ConfigDao {
 
-    @Query("SELECT * FROM config")
+    @Query("SELECT * FROM config LIMIT 1")
     suspend fun getConfig(): ConfigEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

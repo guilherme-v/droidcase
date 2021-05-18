@@ -3,7 +3,7 @@ package br.curitiba.android.data.mapper
 import br.curitiba.android.data.model.ProjectData
 import br.curitiba.android.domain.model.Project
 
-class ProjectMapper constructor() : DataMapper<ProjectData, Project> {
+class ProjectMapper : DataMapper<ProjectData, Project> {
 
     override fun mapToDomain(data: ProjectData) = with(data) {
         Project(

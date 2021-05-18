@@ -4,7 +4,7 @@ import br.curitiba.android.data.model.ProjectData
 import br.curitiba.android.remote.model.ProjectDto
 
 
-class ProjectsResponseDtoMapper constructor() : DtoMapper<ProjectDto, ProjectData> {
+class ProjectsResponseDtoMapper : DtoMapper<ProjectDto, ProjectData> {
 
     override fun mapToData(dto: ProjectDto) = with(dto) {
         ProjectData(

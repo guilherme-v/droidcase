@@ -1,5 +1,6 @@
 package br.curitiba.android.cache.repositories
 
+import android.util.Log
 import br.curitiba.android.cache.db.AppDatabase
 import br.curitiba.android.cache.mapper.ProjectEntityMapper
 import br.curitiba.android.cache.model.config.ConfigEntity
@@ -66,11 +67,8 @@ class ProjectsCacheRepositoryImpl constructor(
         val currentTime = System.currentTimeMillis()
         val expirationTime = (60 * 10 * 1000).toLong()
 
-        val config = try {
-            db.configDao().getConfig()
-        } catch (e: Exception) {
-            ConfigEntity(lastCacheTime = 0)
-        }
+        var config: ConfigEntity? = db.configDao().getConfig()
+        if (config == null) config = ConfigEntity(lastCacheTime = 0)
 
         return currentTime - config.lastCacheTime > expirationTime
     }

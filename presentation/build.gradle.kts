@@ -1,11 +1,8 @@
 plugins {
     id("com.android.application")
-//    id("org.jetbrains.kotlin.android")
-//
-//    id("kotlin-android") version "1.4.30"
     id("kotlin-android")
-//    id("org.jetbrains.kotlin.android") version "1.4.30"
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -14,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.presentation"
-        minSdk = 21
+        minSdk = 22
         targetSdk = 30
         versionCode = 1
         versionName = "1.0"
@@ -60,12 +57,15 @@ android {
 dependencies {
     // Depends on Data Module
     implementation(project(mapOf("path" to ":domain")))
+    implementation(project(mapOf("path" to ":data")))
+    implementation(project(mapOf("path" to ":remote")))
+    implementation(project(mapOf("path" to ":cache")))
 
     // Add dependencies
     Presentation.dependencies.forEach { implementation(it) }
 
     // Include annotation processors compilers
-    // Presentation.compilers.forEach { kapt(it) }
+    Presentation.compilers.forEach { kapt(it) }
 
     // Add Test dependencies
     Presentation.testDependencies.forEach { testImplementation(it) }

@@ -9,17 +9,22 @@ object Versions {
     const val okhttp_version = "4.9.0"
     const val room_version = "2.3.0"
     const val kotlin_reflect_version = "1.5.0"
+    const val hilt_version = "2.35"
+    const val coil_version = "0.9.0"
 
     // https://developer.android.com/jetpack/androidx/versions
 
     const val android_core_ktx_version = "1.3.2"
-    const val android_appcompat_version = "1.2.0"
+    const val android_appcompat_version = "1.3.0-rc01"
     const val android_material_version = "1.2.1"
     const val android_compose_version = "1.0.0-beta06"
     const val android_lifecycle_version = "2.3.0-alpha06"
     const val android_activity_compose_version = "1.3.0-alpha03"
     const val android_compose_vm_version = "1.0.0-alpha02"
     const val android_compose_ld_version = "1.0.0-beta01"
+    const val android_nav_version = "2.3.5"
+    const val android_nav_compose_version = "1.0.0-alpha10"
+    const val android_constraint_version = "2.0.4"
 
     const val coroutine_test_version = "1.4.3"
     const val junit_version = "4.12"

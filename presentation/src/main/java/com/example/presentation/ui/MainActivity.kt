@@ -1,8 +1,7 @@
-package com.example.presentation
+package com.example.presentation.ui
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,13 +16,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.presentation.R
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : ComponentActivity() {
+@AndroidEntryPoint
+class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            NewStory()
-        }
+        setContentView(R.layout.activity_main)
+
     }
 }
 
@@ -40,7 +42,7 @@ fun NewStory() {
             modifier = Modifier.padding(16.dp)
         ) {
             Image(
-                painter = painterResource(R.drawable.header),
+                painter = painterResource(R.drawable.header2),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
